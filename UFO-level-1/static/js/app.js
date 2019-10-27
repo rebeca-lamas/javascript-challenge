@@ -13,9 +13,8 @@ tableData.forEach((sighting) => {
     });
 });
 
-const button = d3.select("#filter-btn");
 
-button.on("click", () => {
+const filterTable = () => {
     const inputDate = d3.select("#datetime");
     const inputDateValue = inputDate.property("value");
     console.log(inputDateValue);
@@ -105,4 +104,7 @@ button.on("click", () => {
             tr.append("td").text(value);
         });
     });
-});
+};
+
+const button = d3.select("#filter-btn");
+button.on("click", filterTable);
